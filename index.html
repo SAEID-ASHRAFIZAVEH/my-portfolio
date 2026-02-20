@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Scientist & Analyst Portfolio</title>
+<title>Saeid Ashrafizaveh | Data Scientist & Analyst</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:wght@300;400;600;900&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -28,7 +28,6 @@
     overflow-x: hidden;
   }
 
-  /* Animated grid background */
   body::before {
     content: '';
     position: fixed;
@@ -96,7 +95,7 @@
   @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
 
   h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 900;
     line-height: 1.1;
     letter-spacing: -1px;
@@ -109,20 +108,30 @@
     background-clip: text;
   }
 
-  .subtitle {
-    color: var(--muted);
-    font-size: 1rem;
-    margin-top: 8px;
-    font-weight: 300;
+  .subtitle { color: var(--muted); font-size: 0.95rem; margin-top: 8px; font-weight: 300; }
+  .location { color: var(--muted); font-family: 'Space Mono', monospace; font-size: 0.7rem; margin-top: 6px; letter-spacing: 1px; }
+
+  .contact-row { display: flex; gap: 16px; margin-top: 14px; flex-wrap: wrap; }
+  .contact-link {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--accent1);
+    text-decoration: none;
+    border: 1px solid rgba(0,212,255,0.3);
+    padding: 4px 10px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    letter-spacing: 0.5px;
   }
+  .contact-link:hover { background: rgba(0,212,255,0.1); }
 
   .avatar {
     width: 90px; height: 90px;
     border-radius: 50%;
     background: linear-gradient(135deg, var(--accent2), var(--accent1));
     display: flex; align-items: center; justify-content: center;
-    font-size: 1rem;
     font-family: 'Space Mono', monospace;
+    font-size: 0.85rem;
     font-weight: 700;
     color: #fff;
     letter-spacing: 1px;
@@ -136,7 +145,7 @@
     50% { box-shadow: 0 0 60px rgba(123,47,255,0.5); }
   }
 
-  /* STATS ROW */
+  /* STATS */
   .stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -156,7 +165,6 @@
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    cursor: default;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
@@ -183,13 +191,10 @@
     margin-bottom: 4px;
   }
 
-  .stat-label { font-size: 0.75rem; color: var(--muted); letter-spacing: 0.5px; }
+  .stat-label { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.5px; }
 
-  /* SKILLS */
-  .section {
-    margin-bottom: 36px;
-    animation: fadeUp 0.8s ease 0.3s both;
-  }
+  /* SECTION */
+  .section { margin-bottom: 36px; animation: fadeUp 0.8s ease 0.3s both; }
 
   .section-title {
     font-family: 'Space Mono', monospace;
@@ -210,21 +215,30 @@
     background: var(--border);
   }
 
-  .skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  /* SUMMARY */
+  .summary-box {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent1);
+    border-radius: 10px;
+    padding: 20px 24px;
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: #b8d4e8;
   }
+
+  /* SKILLS */
+  .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
 
   .skill-tag {
     font-family: 'Space Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     padding: 6px 14px;
     border-radius: 6px;
     border: 1px solid var(--border);
     background: var(--surface);
     color: var(--text);
-    cursor: pointer;
+    cursor: default;
     transition: all 0.2s ease;
     position: relative;
     overflow: hidden;
@@ -240,7 +254,7 @@
     transition: transform 0.2s ease;
   }
 
-  .skill-tag:hover { border-color: var(--accent1); color: var(--accent1); transform: scale(1.05); }
+  .skill-tag:hover { border-color: var(--accent1); color: var(--accent1); }
   .skill-tag:hover::before { transform: scaleY(1); }
   .skill-tag.purple:hover { border-color: var(--accent2); color: var(--accent2); }
   .skill-tag.purple::before { background: var(--accent2); }
@@ -249,18 +263,9 @@
 
   /* SKILL BARS */
   .skill-bars { display: flex; flex-direction: column; gap: 14px; }
-
-  .bar-row { display: grid; grid-template-columns: 140px 1fr 40px; align-items: center; gap: 12px; }
-
+  .bar-row { display: grid; grid-template-columns: 160px 1fr 40px; align-items: center; gap: 12px; }
   .bar-name { font-size: 0.85rem; color: var(--text); }
-
-  .bar-track {
-    height: 6px;
-    background: var(--border);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
+  .bar-track { height: 6px; background: var(--border); border-radius: 10px; overflow: hidden; }
   .bar-fill {
     height: 100%;
     border-radius: 10px;
@@ -268,10 +273,9 @@
     width: 0;
     transition: width 1.5s cubic-bezier(0.16,1,0.3,1);
   }
-
   .bar-pct { font-family: 'Space Mono', monospace; font-size: 0.7rem; color: var(--muted); text-align: right; }
 
-  /* LIVE CHART */
+  /* CHART */
   .chart-area {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -281,15 +285,8 @@
     animation: fadeUp 0.8s ease 0.4s both;
   }
 
-  .chart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-
+  .chart-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
   .chart-title { font-size: 0.95rem; font-weight: 600; }
-
   .chart-tabs { display: flex; gap: 4px; }
 
   .chart-tab {
@@ -306,85 +303,108 @@
   }
 
   .chart-tab.active { background: var(--accent1); border-color: var(--accent1); color: var(--bg); }
-
   canvas { width: 100% !important; max-height: 180px; }
 
-  /* PROJECTS */
-  .projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 36px;
-    animation: fadeUp 0.8s ease 0.5s both;
-  }
+  /* EXPERIENCE */
+  .exp-list { display: flex; flex-direction: column; gap: 16px; }
 
-  .project-card {
+  .exp-card {
     background: var(--surface);
     border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    border-radius: 12px;
+    padding: 20px 24px;
+    transition: all 0.3s;
     position: relative;
     overflow: hidden;
   }
 
-  .project-card::before {
+  .exp-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
     background: var(--accent1);
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-    transform-origin: left;
   }
 
-  .project-card:hover { border-color: var(--accent1); transform: translateY(-3px); }
-  .project-card:hover::before { transform: scaleX(1); }
-  .project-card.purple::before { background: var(--accent2); }
-  .project-card.purple:hover { border-color: var(--accent2); }
-  .project-card.orange::before { background: var(--accent3); }
-  .project-card.orange:hover { border-color: var(--accent3); }
+  .exp-card.purple::before { background: var(--accent2); }
 
-  .project-icon {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 1px;
-    color: var(--accent1);
-    border: 1px solid var(--accent1);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 8px;
-    margin-bottom: 12px;
+  .exp-card:hover { border-color: var(--accent1); transform: translateX(4px); }
+  .exp-card.purple:hover { border-color: var(--accent2); }
+
+  .exp-role { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+  .exp-company { color: var(--accent1); font-family: 'Space Mono', monospace; font-size: 0.72rem; margin-bottom: 4px; }
+  .exp-card.purple .exp-company { color: var(--accent2); }
+  .exp-date { color: var(--muted); font-size: 0.75rem; margin-bottom: 10px; }
+  .exp-desc { font-size: 0.82rem; color: #9ab8ce; line-height: 1.6; }
+
+  /* PUBLICATIONS */
+  .pub-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .pub-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    transition: all 0.3s;
   }
 
-  .project-card.purple .project-icon { color: var(--accent2); border-color: var(--accent2); }
-  .project-card.orange .project-icon { color: var(--accent3); border-color: var(--accent3); }
-
-  .project-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
-
-  .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
-
-  .project-tech { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
-
-  .tech-chip {
+  .pub-card:hover { border-color: var(--accent3); }
+  .pub-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; line-height: 1.4; }
+  .pub-meta { font-family: 'Space Mono', monospace; font-size: 0.65rem; color: var(--muted); }
+  .pub-citations {
+    display: inline-block;
+    margin-top: 6px;
     font-family: 'Space Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.65rem;
+    color: var(--accent3);
+    border: 1px solid rgba(255,107,53,0.3);
     padding: 2px 8px;
     border-radius: 4px;
-    background: rgba(0,212,255,0.1);
-    color: var(--accent1);
-    border: 1px solid rgba(0,212,255,0.2);
-    letter-spacing: 0.5px;
   }
 
-  .tech-chip.purple { background: rgba(123,47,255,0.1); color: var(--accent2); border-color: rgba(123,47,255,0.2); }
-  .tech-chip.orange { background: rgba(255,107,53,0.1); color: var(--accent3); border-color: rgba(255,107,53,0.2); }
+  /* EDUCATION */
+  .edu-list { display: flex; flex-direction: column; gap: 12px; }
+
+  .edu-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 12px;
+    align-items: start;
+    transition: all 0.3s;
+  }
+
+  .edu-card:hover { border-color: var(--accent2); }
+  .edu-degree { font-weight: 700; font-size: 0.88rem; margin-bottom: 2px; }
+  .edu-uni { color: var(--accent2); font-size: 0.78rem; font-family: 'Space Mono', monospace; }
+  .edu-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--muted);
+    white-space: nowrap;
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    border-radius: 4px;
+  }
+
+  /* CERTIFICATIONS */
+  .cert-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+  .cert-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.3s;
+  }
+
+  .cert-card:hover { border-color: var(--accent1); transform: translateY(-2px); }
+  .cert-name { font-size: 0.82rem; font-weight: 600; margin-bottom: 4px; line-height: 1.3; }
+  .cert-issuer { font-family: 'Space Mono', monospace; font-size: 0.62rem; color: var(--accent1); }
+  .cert-date { font-size: 0.68rem; color: var(--muted); margin-top: 4px; }
 
   /* CTA */
   .cta {
@@ -393,6 +413,7 @@
     justify-content: center;
     flex-wrap: wrap;
     animation: fadeUp 0.8s ease 0.6s both;
+    margin-top: 40px;
   }
 
   .btn {
@@ -427,9 +448,10 @@
 
   @media (max-width: 600px) {
     .stats { grid-template-columns: repeat(2, 1fr); }
-    .projects { grid-template-columns: 1fr; }
     .header { grid-template-columns: 1fr; }
-    .bar-row { grid-template-columns: 100px 1fr 36px; }
+    .bar-row { grid-template-columns: 120px 1fr 36px; }
+    .cert-grid { grid-template-columns: 1fr; }
+    .edu-card { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -440,29 +462,44 @@
   <div class="header">
     <div>
       <div class="badge">OPEN TO OPPORTUNITIES</div>
-      <h1>Data Scientist<br>& <span>Analyst</span></h1>
-      <p class="subtitle">Turning raw data into decisions that drive impact</p>
+      <h1>Saeid<br><span>Ashrafizaveh</span></h1>
+      <p class="subtitle">Data Scientist | M.Sc. Data Science Candidate</p>
+      <p class="location">Berlin, Germany &nbsp;|&nbsp; saeedashrafizaveh@gmail.com &nbsp;|&nbsp; +49 176 66048171</p>
+      <div class="contact-row">
+        <a class="contact-link" href="https://www.linkedin.com/in/saeid-ashrafizaveh-839820291" target="_blank">LINKEDIN</a>
+        <a class="contact-link" href="https://github.com/SAEID-ASHRAFIZAVEH" target="_blank">GITHUB</a>
+        <a class="contact-link" href="https://scholar.google.com/citations?hl=en&pli=1&user=EwVWLnEAAAAJ" target="_blank">GOOGLE SCHOLAR</a>
+        <a class="contact-link" href="resume.pdf" target="_blank">DOWNLOAD CV</a>
+      </div>
     </div>
-    <div class="avatar">DS</div>
+    <div class="avatar">SA</div>
   </div>
 
   <!-- STATS -->
   <div class="stats">
     <div class="stat-card">
-      <span class="stat-num" data-target="50">0</span>
-      <span class="stat-label">Projects Done</span>
+      <span class="stat-num" data-target="240">0</span>
+      <span class="stat-label">Research Citations</span>
     </div>
     <div class="stat-card">
-      <span class="stat-num" data-target="5">0</span>
-      <span class="stat-label">Years Experience</span>
+      <span class="stat-num" data-target="2">0</span>
+      <span class="stat-label">Years DS Experience</span>
     </div>
     <div class="stat-card">
-      <span class="stat-num" data-target="98">0</span>
-      <span class="stat-label">Model Accuracy %</span>
+      <span class="stat-num" data-target="8">0</span>
+      <span class="stat-label">Years Industry Exp.</span>
     </div>
     <div class="stat-card">
-      <span class="stat-num" data-target="20">0</span>
-      <span class="stat-label">Tools Mastered</span>
+      <span class="stat-num" data-target="6">0</span>
+      <span class="stat-label">Certifications</span>
+    </div>
+  </div>
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <div class="section-title">About Me</div>
+    <div class="summary-box">
+      Data Scientist with 2+ years of remote experience in biotech and academic research, building predictive models and delivering data-driven insights. Currently advancing expertise through an M.Sc. in Data Science at the University of Europe for Applied Sciences, specializing in Deep Learning and NLP. Combines a strong research background — evidenced by 240+ citations — with 8 years of practical industrial experience in process optimization.
     </div>
   </div>
 
@@ -471,38 +508,38 @@
     <div class="chart-header">
       <span class="chart-title">Live Model Performance Simulation</span>
       <div class="chart-tabs">
-        <button class="chart-tab active" onclick="switchChart('accuracy')">ACCURACY</button>
-        <button class="chart-tab" onclick="switchChart('loss')">LOSS</button>
-        <button class="chart-tab" onclick="switchChart('f1')">F1 SCORE</button>
+        <button class="chart-tab active" onclick="switchChart('accuracy', this)">ACCURACY</button>
+        <button class="chart-tab" onclick="switchChart('loss', this)">LOSS</button>
+        <button class="chart-tab" onclick="switchChart('f1', this)">F1 SCORE</button>
       </div>
     </div>
     <canvas id="perfChart"></canvas>
   </div>
 
-  <!-- CORE SKILLS -->
+  <!-- SKILLS -->
   <div class="section">
-    <div class="section-title">Core Toolkit</div>
+    <div class="section-title">Technical Skills</div>
     <div class="skills-grid">
       <span class="skill-tag">Python</span>
+      <span class="skill-tag">Scikit-learn</span>
       <span class="skill-tag">Pandas</span>
       <span class="skill-tag">NumPy</span>
-      <span class="skill-tag">Scikit-learn</span>
-      <span class="skill-tag purple">TensorFlow</span>
-      <span class="skill-tag purple">PyTorch</span>
-      <span class="skill-tag purple">Keras</span>
-      <span class="skill-tag orange">SQL</span>
-      <span class="skill-tag orange">PostgreSQL</span>
-      <span class="skill-tag orange">BigQuery</span>
-      <span class="skill-tag">R</span>
-      <span class="skill-tag">Jupyter</span>
-      <span class="skill-tag purple">Power BI</span>
-      <span class="skill-tag purple">Tableau</span>
+      <span class="skill-tag">SQL</span>
+      <span class="skill-tag purple">Deep Learning</span>
+      <span class="skill-tag purple">NLP</span>
+      <span class="skill-tag purple">Computer Vision</span>
+      <span class="skill-tag purple">MLOps</span>
+      <span class="skill-tag purple">Azure</span>
+      <span class="skill-tag orange">Power BI</span>
+      <span class="skill-tag orange">Data Visualization</span>
+      <span class="skill-tag orange">Statistical Analysis</span>
+      <span class="skill-tag orange">SPSS</span>
       <span class="skill-tag orange">Excel</span>
-      <span class="skill-tag">Matplotlib</span>
-      <span class="skill-tag">Seaborn</span>
-      <span class="skill-tag orange">Spark</span>
-      <span class="skill-tag">Docker</span>
-      <span class="skill-tag purple">AWS / GCP</span>
+      <span class="skill-tag">Time-Series Analysis</span>
+      <span class="skill-tag">Big Data Engineering</span>
+      <span class="skill-tag">IoT Analytics</span>
+      <span class="skill-tag purple">Classification</span>
+      <span class="skill-tag">Experiment Design</span>
     </div>
   </div>
 
@@ -512,81 +549,148 @@
     <div class="skill-bars">
       <div class="bar-row">
         <span class="bar-name">Machine Learning</span>
-        <div class="bar-track"><div class="bar-fill" data-width="92"></div></div>
-        <span class="bar-pct">92%</span>
+        <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
+        <span class="bar-pct">90%</span>
       </div>
       <div class="bar-row">
-        <span class="bar-name">Data Visualization</span>
+        <span class="bar-name">Python & SQL</span>
         <div class="bar-track"><div class="bar-fill" data-width="88"></div></div>
         <span class="bar-pct">88%</span>
       </div>
       <div class="bar-row">
         <span class="bar-name">Statistical Analysis</span>
-        <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
-        <span class="bar-pct">90%</span>
-      </div>
-      <div class="bar-row">
-        <span class="bar-name">SQL & Databases</span>
         <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
         <span class="bar-pct">85%</span>
       </div>
       <div class="bar-row">
-        <span class="bar-name">Deep Learning</span>
-        <div class="bar-track"><div class="bar-fill" data-width="78"></div></div>
-        <span class="bar-pct">78%</span>
+        <span class="bar-name">Deep Learning / NLP</span>
+        <div class="bar-track"><div class="bar-fill" data-width="80"></div></div>
+        <span class="bar-pct">80%</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-name">Data Visualization</span>
+        <div class="bar-track"><div class="bar-fill" data-width="85"></div></div>
+        <span class="bar-pct">85%</span>
       </div>
     </div>
   </div>
 
-  <!-- PROJECTS -->
-  <div class="section-title">Featured Projects</div>
-  <div class="projects">
-    <div class="project-card">
-      <div class="project-icon">ML</div>
-      <div class="project-title">Customer Churn Predictor</div>
-      <div class="project-desc">Built an ML pipeline achieving 94% accuracy using XGBoost and SHAP explainability for a telecom dataset of 500K+ users.</div>
-      <div class="project-tech">
-        <span class="tech-chip">PYTHON</span>
-        <span class="tech-chip">XGBOOST</span>
-        <span class="tech-chip">SHAP</span>
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <div class="section-title">Professional Experience</div>
+    <div class="exp-list">
+      <div class="exp-card">
+        <div class="exp-role">Data Scientist (Remote)</div>
+        <div class="exp-company">Medical University of Gdansk, Poland</div>
+        <div class="exp-date">Sep 2023 — Sep 2024</div>
+        <div class="exp-desc">Developed, tuned, and validated machine learning models to support academic research for a Nobelium Prize laureate. Conducted data acquisition, preprocessing, and inferential statistical analysis. Created reproducible code, technical documentation, and dashboards to support manuscript and grant reporting.</div>
+      </div>
+      <div class="exp-card purple">
+        <div class="exp-role">Data Scientist & Apprentice (Remote)</div>
+        <div class="exp-company">Guangzhou Zhuo Sheng Biotechnology Co., Ltd., China</div>
+        <div class="exp-date">2022 — 2023</div>
+        <div class="exp-desc">Performed exploratory data analysis and built predictive/classification models for research and product analytics. Supported data collection, curation workflows, and translated findings into clear reports. Collaborated with cross-functional R&D teams on experiment design and evaluation.</div>
       </div>
     </div>
-    <div class="project-card purple">
-      <div class="project-icon">NLP</div>
-      <div class="project-title">NLP Sentiment Engine</div>
-      <div class="project-desc">Real-time Twitter sentiment analysis using BERT fine-tuning, deployed as a REST API processing 10K tweets/sec.</div>
-      <div class="project-tech">
-        <span class="tech-chip purple">BERT</span>
-        <span class="tech-chip purple">FASTAPI</span>
-        <span class="tech-chip purple">DOCKER</span>
+  </div>
+
+  <!-- EDUCATION -->
+  <div class="section">
+    <div class="section-title">Education</div>
+    <div class="edu-list">
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">M.Sc. Data Science (Current)</div>
+          <div class="edu-uni">University of Europe for Applied Sciences (UE) — Potsdam, Germany</div>
+          <div style="font-size:0.75rem; color:var(--muted); margin-top:6px;">Deep Learning · NLP & Computer Vision · MLOps & Cloud · Big Data Engineering</div>
+        </div>
+        <div class="edu-year">Expected 2027</div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">M.Sc. Veterinary Histology</div>
+          <div class="edu-uni">Iran</div>
+        </div>
+        <div class="edu-year">Completed</div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <div class="edu-degree">B.Sc. Pulp and Paper Engineering</div>
+          <div class="edu-uni">Iran</div>
+        </div>
+        <div class="edu-year">Completed</div>
       </div>
     </div>
-    <div class="project-card orange">
-      <div class="project-icon">BI</div>
-      <div class="project-title">Sales Analytics Dashboard</div>
-      <div class="project-desc">Interactive Power BI dashboard delivering real-time KPIs to 200+ stakeholders across 5 regional teams.</div>
-      <div class="project-tech">
-        <span class="tech-chip orange">POWER BI</span>
-        <span class="tech-chip orange">DAX</span>
-        <span class="tech-chip orange">SQL</span>
+  </div>
+
+  <!-- PUBLICATIONS -->
+  <div class="section">
+    <div class="section-title">Research & Publications</div>
+    <div class="pub-list">
+      <div class="pub-card">
+        <div class="pub-title">Long non-coding RNAs in the doxorubicin resistance of cancer cells</div>
+        <div class="pub-meta">Cancer Letters 508 — 2021</div>
+        <div class="pub-citations">175 CITATIONS</div>
+      </div>
+      <div class="pub-card">
+        <div class="pub-title">The role of SOX family transcription factors in gastric cancer</div>
+        <div class="pub-meta">International Journal of Biological Macromolecules 180 — 2021</div>
+        <div class="pub-citations">68 CITATIONS</div>
       </div>
     </div>
-    <div class="project-card">
-      <div class="project-icon">TS</div>
-      <div class="project-title">Stock Price Forecasting</div>
-      <div class="project-desc">LSTM-based time series model for stock price prediction with 86% directional accuracy over 30-day windows.</div>
-      <div class="project-tech">
-        <span class="tech-chip">LSTM</span>
-        <span class="tech-chip">TENSORFLOW</span>
-        <span class="tech-chip">PANDAS</span>
+  </div>
+
+  <!-- CERTIFICATIONS -->
+  <div class="section">
+    <div class="section-title">Certifications</div>
+    <div class="cert-grid">
+      <div class="cert-card">
+        <div class="cert-name">Getting Started with Generative AI</div>
+        <div class="cert-issuer">Pragmatic AI Labs — Duke University</div>
+        <div class="cert-date">Dec 2025 · 97% Score</div>
       </div>
+      <div class="cert-card">
+        <div class="cert-name">Machine Learning for Image Data</div>
+        <div class="cert-issuer">University of Nottingham & University of Lincoln</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">Introduction to Data Engineering with Microsoft Azure</div>
+        <div class="cert-issuer">FutureLearn</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">Introduction to Cyber Security</div>
+        <div class="cert-issuer">The Open University</div>
+        <div class="cert-date">Dec 2025 · 98% Score</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">Introduction to Data Analytics with Python</div>
+        <div class="cert-issuer">FutureLearn</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-name">Practical Machine Learning for AI</div>
+        <div class="cert-issuer">Cardiff University</div>
+        <div class="cert-date">Dec 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LANGUAGES -->
+  <div class="section">
+    <div class="section-title">Languages</div>
+    <div class="skills-grid">
+      <span class="skill-tag">English — Proficient</span>
+      <span class="skill-tag purple">German — Improving</span>
+      <span class="skill-tag orange">Persian — Native</span>
     </div>
   </div>
 
   <!-- CTA -->
   <div class="cta">
-    <button class="btn btn-primary" onclick="alert('Let\'s connect! Update this with your real LinkedIn URL.')">Connect on LinkedIn</button>
-    <button class="btn btn-outline" onclick="alert('Attach your real resume PDF here!')">Download Resume</button>
+    <a class="btn btn-primary" href="https://www.linkedin.com/in/saeid-ashrafizaveh-839820291" target="_blank">Connect on LinkedIn</a>
+    <a class="btn btn-outline" href="resume.pdf" target="_blank">Download Resume</a>
   </div>
 
 </div>
@@ -597,21 +701,18 @@
     document.querySelectorAll('[data-target]').forEach(el => {
       const target = +el.dataset.target;
       let current = 0;
-      const step = target / 60;
+      const step = Math.max(1, target / 60);
       const timer = setInterval(() => {
         current += step;
         if (current >= target) { current = target; clearInterval(timer); }
-        el.textContent = Math.round(current) + (el.textContent.includes('%') ? '%' : '+');
+        el.textContent = Math.round(current) + '+';
       }, 20);
     });
   }
 
-  // SKILL BARS
   function animateBars() {
     document.querySelectorAll('.bar-fill').forEach(bar => {
-      setTimeout(() => {
-        bar.style.width = bar.dataset.width + '%';
-      }, 400);
+      setTimeout(() => { bar.style.width = bar.dataset.width + '%'; }, 400);
     });
   }
 
@@ -621,7 +722,6 @@
     renderChart('accuracy');
   });
 
-  // CHART
   const chartData = {
     accuracy: {
       label: 'Validation Accuracy',
@@ -640,19 +740,11 @@
     }
   };
 
-  let chartInstance = null;
-
   function renderChart(type) {
     const canvas = document.getElementById('perfChart');
     const ctx = canvas.getContext('2d');
     const d = chartData[type];
     const epochs = d.data.length;
-    const labels = Array.from({length: epochs}, (_, i) => `Epoch ${i+1}`);
-
-    if (chartInstance) {
-      chartInstance.destroy();
-      chartInstance = null;
-    }
 
     const w = canvas.parentElement.offsetWidth - 48;
     const h = 180;
@@ -662,47 +754,21 @@
     const pad = { top: 16, right: 16, bottom: 28, left: 44 };
     const chartW = w - pad.left - pad.right;
     const chartH = h - pad.top - pad.bottom;
-
     const maxVal = Math.max(...d.data) * 1.05;
     const minVal = Math.min(0, ...d.data) * 0.95;
 
     function xPos(i) { return pad.left + (i / (epochs - 1)) * chartW; }
     function yPos(v) { return pad.top + (1 - (v - minVal) / (maxVal - minVal)) * chartH; }
 
-    ctx.clearRect(0, 0, w, h);
-
-    // Grid lines
-    ctx.strokeStyle = '#0d2a45';
-    ctx.lineWidth = 1;
-    for (let i = 0; i <= 4; i++) {
-      const y = pad.top + (i / 4) * chartH;
-      ctx.beginPath(); ctx.moveTo(pad.left, y); ctx.lineTo(pad.left + chartW, y); ctx.stroke();
-      const val = maxVal - (i / 4) * (maxVal - minVal);
-      ctx.fillStyle = '#4a7a9b';
-      ctx.font = '10px Space Mono';
-      ctx.textAlign = 'right';
-      ctx.fillText(val.toFixed(2), pad.left - 6, y + 4);
-    }
-
-    // Area gradient
     const grad = ctx.createLinearGradient(0, pad.top, 0, pad.top + chartH);
     grad.addColorStop(0, d.color + '44');
     grad.addColorStop(1, d.color + '00');
-    ctx.beginPath();
-    ctx.moveTo(xPos(0), yPos(d.data[0]));
-    d.data.forEach((v, i) => { if (i > 0) ctx.lineTo(xPos(i), yPos(v)); });
-    ctx.lineTo(xPos(epochs - 1), pad.top + chartH);
-    ctx.lineTo(xPos(0), pad.top + chartH);
-    ctx.closePath();
-    ctx.fillStyle = grad;
-    ctx.fill();
 
-    // Line (animated)
     let progress = 0;
-    function drawLine(prog) {
+
+    function draw(prog) {
       ctx.clearRect(0, 0, w, h);
 
-      // Re-draw grid
       ctx.strokeStyle = '#0d2a45'; ctx.lineWidth = 1;
       for (let i = 0; i <= 4; i++) {
         const y = pad.top + (i / 4) * chartH;
@@ -712,48 +778,45 @@
         ctx.fillText(val.toFixed(2), pad.left - 6, y + 4);
       }
 
-      // Area (up to progress)
       const pEpochs = Math.max(2, Math.floor(prog * (epochs - 1)));
+
       ctx.beginPath();
       ctx.moveTo(xPos(0), yPos(d.data[0]));
       for (let i = 1; i <= pEpochs && i < epochs; i++) ctx.lineTo(xPos(i), yPos(d.data[i]));
-      ctx.lineTo(xPos(Math.min(pEpochs, epochs-1)), pad.top + chartH);
+      ctx.lineTo(xPos(Math.min(pEpochs, epochs - 1)), pad.top + chartH);
       ctx.lineTo(xPos(0), pad.top + chartH);
       ctx.closePath();
       ctx.fillStyle = grad; ctx.fill();
 
-      // Line
       ctx.strokeStyle = d.color; ctx.lineWidth = 2.5;
       ctx.beginPath();
       ctx.moveTo(xPos(0), yPos(d.data[0]));
       for (let i = 1; i <= pEpochs && i < epochs; i++) ctx.lineTo(xPos(i), yPos(d.data[i]));
       ctx.stroke();
 
-      // Dot at end
       const ei = Math.min(pEpochs, epochs - 1);
       ctx.beginPath();
       ctx.arc(xPos(ei), yPos(d.data[ei]), 5, 0, Math.PI * 2);
       ctx.fillStyle = d.color; ctx.fill();
 
-      // Labels
       ctx.fillStyle = '#4a7a9b'; ctx.font = '9px Space Mono'; ctx.textAlign = 'center';
       [0, 3, 6, 9, 11].forEach(i => {
-        if (i < epochs) ctx.fillText(labels[i], xPos(i), pad.top + chartH + 16);
+        if (i < epochs) ctx.fillText('Epoch ' + (i + 1), xPos(i), pad.top + chartH + 16);
       });
     }
 
     function animate() {
       progress += 0.04;
-      drawLine(Math.min(progress, 1));
+      draw(Math.min(progress, 1));
       if (progress < 1) requestAnimationFrame(animate);
     }
 
     animate();
   }
 
-  function switchChart(type) {
+  function switchChart(type, btn) {
     document.querySelectorAll('.chart-tab').forEach(t => t.classList.remove('active'));
-    event.target.classList.add('active');
+    btn.classList.add('active');
     renderChart(type);
   }
 </script>
